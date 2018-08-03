@@ -1,0 +1,9 @@
+
+
+    <% if @posts.any? %>
+    <h3>Posts (<%= @posts.count %>)</h3>
+       <%= render @posts %>
+         <%= will_paginate @posts %>
+    <% end %>
+  
+   

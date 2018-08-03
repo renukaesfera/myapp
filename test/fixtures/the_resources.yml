@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  password_changed_at: 2018-07-30 11:19:14
+
+two:
+  password_changed_at: 2018-07-30 11:19:14

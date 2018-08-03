@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  <form>
+  <div class="form-group">
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class: 'form-control' %>
+  </div>
+<div class="form-group">
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off",class: 'form-control' %>
+  </div>
+
+<div class="form-group">
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off",class: 'form-control' %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Sign up",class: "btn btn-primary" %>
+  </div>
+  
+ <div class="g-recaptcha" data-sitekey="6LcCK2cUAAAAACroO1EyMXPisS4msU8yDpLcbiy5"></div>
+   </form>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
+</div>
+</body>
+</html>

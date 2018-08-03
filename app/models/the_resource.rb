@@ -1,0 +1,2 @@
+class TheResource < ApplicationRecord
+end

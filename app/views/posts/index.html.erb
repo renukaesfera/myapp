@@ -1,0 +1,40 @@
+
+<% if @post.any? %>
+	<h3>Posts (<%= @post.count %>)</h3>
+
+	<span class="content">  
+		<div class="col-md-6">
+			<table class="table table-hover ">
+
+				<thead class="thead-dark">
+	    			<tr>
+	    				<th>Content</th>
+	    				<th>Posted at</th>
+	    				<th>Posted by</th>
+	    				<th>Action</th>
+	    			</tr>
+				</thead>
+				<% @post.each do|post| %>
+				<tbody>
+    				<tr>
+    					<td><%= post.content %><br></td>
+           	  		<span class="timestamp">
+	        			<td> <%= post.created_at.strftime('%d/%m/%Y Time %I-%M-%S %p') %><br></td>
+	        			<td><%= post.page.email%><br></td>
+	         		 </span>
+
+	     				<td><%= link_to "delete", post, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+
+         				<%= link_to "edit", edit_post_path(post) %><br><br></td>
+        			 </tr>
+				</tbody>
+
+	<% end %>
+	    	</table>
+   		</div>
+	</span>
+	  
+        <%= will_paginate @post %>
+<% end %>
+  
